@@ -154,7 +154,7 @@ public class Menu extends Application{
 	    text3.setOnMouseExited(mouseEvent -> text3.setFill(Color.WHITE));
 	    text4.setOnMouseEntered(mouseEvent -> text4.setFill(Color.GREEN));
 	    text4.setOnMouseExited(mouseEvent -> text4.setFill(Color.WHITE));
-	    text1.setOnMouseClicked(mouseEvent -> System.out.println("text 1"));
+		text1.setOnMouseClicked(mouseEvent -> NouvellePartie.newGame(stage));
 	    text2.setOnMouseClicked(mouseEvent -> stage.setScene(scene2));
 	    text3.setOnMouseClicked(mouseEvent -> stage.setScene(opt));
 	    text4.setOnMouseClicked(mouseEvent -> stage.setScene(commentJouer));
