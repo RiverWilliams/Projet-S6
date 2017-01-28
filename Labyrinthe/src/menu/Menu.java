@@ -36,7 +36,7 @@ public class Menu extends Application{
 		Pane root = new Pane();
 		Scene scene = new Scene(root);
 		scene.setFill(Color.BLACK);
-		root.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY , Insets.EMPTY)));
+		root.setBackground(new Background(new BackgroundFill(Color.DIMGREY, CornerRadii.EMPTY , Insets.EMPTY)));
 		
 		//2eme scene affichée quand on clique sur 'charger'
 		Group root2 = new Group();
@@ -161,13 +161,31 @@ public class Menu extends Application{
 	    retour.setOnMouseClicked(mouseEvent -> stage.setScene(scene));
 	    iv2.setOnMouseClicked(mouseEvent -> stage.setScene(scene));	    
 	    
-	    //le gif à droite
-	    URL imageURL = getClass().getResource("mariomarche.gif"); 
+	    //les gifs à droite
+	    URL imageURLc = getClass().getResource("chemin.gif"); 
+        Image imagec = new Image(imageURLc.toExternalForm());
+	    ImageView ivc = new ImageView(imagec);
+	    ivc.setX(485.0);
+	    ivc.setY(00.0);
+	    root.getChildren().add(ivc);
+	    URL imageURL = getClass().getResource("juliemarche.gif"); 
         Image image = new Image(imageURL.toExternalForm());
 	    ImageView iv = new ImageView(image);
 	    iv.setX(500.0);
-	    iv.setY(100.0);
+	    iv.setY(80.0);
 	    root.getChildren().add(iv); 
+	    URL imageURLp = getClass().getResource("pemarche.gif"); 
+        Image imagep = new Image(imageURLp.toExternalForm());
+	    ImageView ivp = new ImageView(imagep);
+	    ivp.setX(500.0);
+	    ivp.setY(200.0);
+	    root.getChildren().add(ivp); 
+	    URL imageURLf = getClass().getResource("florianmarche.gif"); 
+        Image imagef = new Image(imageURLf.toExternalForm());
+	    ImageView ivf = new ImageView(imagef);
+	    ivf.setX(500.0);
+	    ivf.setY(320.0);
+	    root.getChildren().add(ivf); 
 	    
 	    //bouton quitter
 	    Button quit = new Button("Quitter");
