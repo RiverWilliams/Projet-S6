@@ -19,11 +19,11 @@ public class Personnage {
 		exp = xp;
 		level = nv;
 	}
-	
+
 	//Personnage donne coup à Ennemi -> changement des pv ennemi, et de l'xp du perso
-	public void donneCoup(Personnage perso, Ennemi enn){
-		int degatsMoy = perso.level*3; //à chaque niveau, le personnage gagne 3 pts de dégats moyens
-		perso.exp += 10; //à cahque coup le personnage gagne de l'experience
+	public void donneCoup(Ennemi enn){
+		int degatsMoy = this.level*3; //à chaque niveau, le personnage gagne 3 pts de dégats moyens
+		this.exp += 10; //à cahque coup le personnage gagne de l'experience
 		int degats;
 		//à chaque coup, le perso peut faire un échec, une réussite ou une réussite critique qui influent sur les degats du coup
 		int jetDe = (int)Math.random()*2;
@@ -41,8 +41,14 @@ public class Personnage {
 		enn.pointsVie -= degats; //on enlève les points de vie correspondants à l'ennemi	
 	}
 	
-	public boolean estMort(Personnage perso){
-		return (perso.pointsVie == 0);
+	public void levelSuperieur(){
+		if (this.exp >= (this.level*110)){
+			this.level ++;
+		}
+	}
+	
+	public boolean estMort(){
+		return (this.pointsVie == 0);
 	}
 	
 }
