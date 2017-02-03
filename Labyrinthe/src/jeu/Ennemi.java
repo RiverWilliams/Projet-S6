@@ -34,5 +34,26 @@ public class Ennemi {
 	public boolean estMort(){
 		return (this.pointsVie == 0);
 	}
+	
+	
+	//quand un personnage meurt, il peut looter des objets (pv ou xp)
+	public void donneLoot(Personnage perso){
+		if (this.loot != null) {
+			if (this.loot.equals("pv")){
+				//on vérifie que le gain de points de vie ne fasse pas depasser le nombre de pv max
+				if ((perso.pointsVie+3) < perso.level*10){
+					perso.pointsVie += 3;
+				}
+				else {
+					perso.pointsVie = perso.level*10;
+				}
+			}
+			else {
+				if (this.loot.equals("xp")){
+					perso.exp += 10;
+				}
+			}
+		}
+	}
 
 }

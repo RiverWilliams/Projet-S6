@@ -44,6 +44,7 @@ public class Personnage {
 	public void levelSuperieur(){
 		if (this.exp >= (this.level*110)){
 			this.level ++;
+			this.pointsVie += 10;
 		}
 	}
 	
