@@ -26,7 +26,7 @@ public class Personnage {
 		this.exp += 10; //à cahque coup le personnage gagne de l'experience
 		int degats;
 		//à chaque coup, le perso peut faire un échec, une réussite ou une réussite critique qui influent sur les degats du coup
-		int jetDe = (int)Math.random()*2;
+		int jetDe = (int)(Math.random()*3);
 		if (jetDe == 0){ //echec
 			degats = degatsMoy - 2;
 		}

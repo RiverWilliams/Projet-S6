@@ -16,7 +16,7 @@ public class Ennemi {
 	public void donneCoup(Personnage perso){
 		int degatsMoy = this.niv.niveau*2;
 		int degats;
-		int jetDe = (int)Math.random()*2;
+		int jetDe = (int)(Math.random()*3);
 		if (jetDe == 0){ //echec
 			degats = degatsMoy - 1;
 		}
