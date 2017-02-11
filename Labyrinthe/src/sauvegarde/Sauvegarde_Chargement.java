@@ -20,7 +20,7 @@ public class Sauvegarde_Chargement {
 			for(File nom : file.listFiles()){
 				System.out.print("\t" + ((nom.isDirectory()) ? nom.getName()+"/" : nom.getName())+"\n");
 				if(nom.getName().equals(nomJoueur+".txt")){
-					System.out.println("Nom du joueur déjà pris");
+					System.out.println("Nom du joueur deja pris");
 					return false;
 				}
 			}
