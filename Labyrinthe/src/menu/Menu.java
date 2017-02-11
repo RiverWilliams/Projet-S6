@@ -1,5 +1,6 @@
 package menu;
 
+import java.io.IOException;
 import java.net.URL;
 
 import javafx.application.Application;
@@ -17,6 +18,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import niveau.Map;
 
 
 public class Menu extends Application{

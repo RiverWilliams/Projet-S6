@@ -1,15 +1,24 @@
 package menu;
 
 
+import java.io.File;
 import java.util.Optional;
+
+import affichage.Heros;
+
 import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import niveau.Map;
 import sauvegarde.Sauvegarde_Chargement;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.image.Image;
 
 
 
@@ -54,17 +63,26 @@ public class NouvellePartie {
 					root.getChildren().add(text);
 					root.getChildren().add(t2);
 					root.getChildren().add(t3);
+					
 					}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		});
-		
-		
-		stage.setScene(nouv);
-		//root.getChildren().add(e)
-
-		
+		try {
+			String path = new File("C:/Users/Julie/Documents/GitHub/Projet-S6/Labyrinthe/src/niveau/niveau1.txt").getAbsolutePath();
+			int [][] tab = Map.importation(path);
+			Canvas canvas = new Canvas((double)(tab[0].length * 16), (double)(tab.length * 16));
+			Group root2 = new Group(new Node[]{canvas});
+			Map.afficher(canvas.getGraphicsContext2D(),new Image(NouvellePartie.class.getResourceAsStream("tiles2.png")), tab);
+			stage.setScene(new Scene((Parent)root2, canvas.getWidth(), canvas.getHeight()));
+			Heros h = new Heros();
+			root2.getChildren().add(h);
+			h.requestFocus();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+				
 	}
 
 }

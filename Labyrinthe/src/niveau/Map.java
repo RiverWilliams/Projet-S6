@@ -12,7 +12,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 public class Map {
-	private void afficher(GraphicsContext gc, Image tileset, int[][] table) {
+	public static void afficher(GraphicsContext gc, Image tileset, int[][] table) {
 		for (int j = 0; j < table.length; j++) {
 			for (int i = 0; i < table[j].length; i++) {
 				Rectangle2D source;
@@ -27,7 +27,7 @@ public class Map {
 		}
 	}
 	
-	private int[][] importation(String nomFichier) throws IOException {
+	public static int[][] importation(String nomFichier) throws IOException {
 		// TODO Auto-generated method stub
 		int [][] table = null;
 		try {
