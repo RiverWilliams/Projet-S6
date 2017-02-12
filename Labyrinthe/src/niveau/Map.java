@@ -16,12 +16,12 @@ public class Map {
 		for (int j = 0; j < table.length; j++) {
 			for (int i = 0; i < table[j].length; i++) {
 				Rectangle2D source;
-				Rectangle2D destination = new Rectangle2D((double)(i * 16), (double)(j * 16), 16.0, 16.0);
+				Rectangle2D destination = new Rectangle2D((double)(i * 32), (double)(j * 32), 32.0, 32.0);
 				if (table[j][i] != 0) {
-					source = new Rectangle2D(0.0, 0.0, 16.0, 16.0);
+					source = new Rectangle2D(0.0, 0.0, 32.0, 32.0);
 					gc.drawImage(tileset, source.getMinX(), source.getMinY(), source.getWidth(), source.getHeight(), destination.getMinX(), destination.getMinY(), destination.getWidth(), destination.getHeight());
 				}
-				source = new Rectangle2D((double)(table[j][i] * 16), 0.0, 16.0, 16.0);
+				source = new Rectangle2D((double)(table[j][i] * 32), 0.0, 32.0, 32.0);
 				gc.drawImage(tileset, source.getMinX(), source.getMinY(), source.getWidth(), source.getHeight(), destination.getMinX(), destination.getMinY(), destination.getWidth(), destination.getHeight());
 			}
 		}

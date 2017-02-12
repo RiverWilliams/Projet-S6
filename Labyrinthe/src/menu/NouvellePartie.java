@@ -72,7 +72,7 @@ public class NouvellePartie {
 		try {
 			String path = new File("C:/Users/Julie/Documents/GitHub/Projet-S6/Labyrinthe/src/niveau/niveau1.txt").getAbsolutePath();
 			int [][] tab = Map.importation(path);
-			Canvas canvas = new Canvas((double)(tab[0].length * 16), (double)(tab.length * 16));
+			Canvas canvas = new Canvas((double)(tab[0].length * 32), (double)(tab.length * 32));
 			Group root2 = new Group(new Node[]{canvas});
 			Map.afficher(canvas.getGraphicsContext2D(),new Image(NouvellePartie.class.getResourceAsStream("tiles2.png")), tab);
 			stage.setScene(new Scene((Parent)root2, canvas.getWidth(), canvas.getHeight()));
